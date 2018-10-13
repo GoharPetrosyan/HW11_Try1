@@ -88,6 +88,8 @@ let addGround = document.querySelector('#idGround');
 
 let arrayCar = [];
 let elmTrack;
+let carArray = [mercedes, bmw, toyota, lexus, audi];
+let arrayFactor = [];
 
 //*************Events for Cars */
 
@@ -101,9 +103,9 @@ addLexus.addEventListener('click', () => { lexus.add( '#idLexus' , arrayCar); te
 
 //**************Events for tracks */
 
-addAsphalt.addEventListener('click', () => { asphalt.add('#idAsphalt'); fillAsphal() });
-addIce.addEventListener('click', () => { ice.add('#idIce'); fillIce() });
-addGround.addEventListener('click', () => { ground.add('#idGround'); fillGround() });
+addAsphalt.addEventListener('click', () => { asphalt.add('#idAsphalt', arrayFactor); fillAsphal() });
+addIce.addEventListener('click', () => { ice.add('#idIce', arrayFactor); fillIce() });
+addGround.addEventListener('click', () => { ground.add('#idGround', arrayFactor); fillGround() });
 
 
 //***************Creat functions Render track */
@@ -144,9 +146,22 @@ function test() {
 }
 
 
+
 //*****************Start button function */
 
+// startFunction() {
 
+// }
+
+function driveCar() {
+    carArray.forEach(function(item) {
+        console.log(item.speed);
+        console.log(arrayFactor)
+        console.log(this.factor);
+    })
+}
+
+driveCar()
 
 
 

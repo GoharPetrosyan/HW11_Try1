@@ -17,10 +17,10 @@ class Track {
 
     }
 
-    add(idTrack) {
+    add(idTrack, array) {
         let elm = document.querySelector(idTrack);
         elm.style.border = 'solid 3px #ff0000';
-        let treck = this.color;
+        array.push(this.factor);
         // console.log(treck);
     }
 }
