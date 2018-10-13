@@ -33,6 +33,19 @@
 table, tr {
     border: 2px dashed #858181;
     border-collapse: collapse;
+    
+}
+
+#firstCar img {
+    position: relative;
+}
+
+#secondCar img {
+    position: relative;
+}
+
+#thirdCar img {
+    position: relative;
 }
 
 th {

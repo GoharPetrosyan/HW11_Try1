@@ -87,20 +87,20 @@ let addGround = document.querySelector('#idGround');
 //************Creat arrays of Global variables */
 
 let arrayCar = [];
-let elmTrack;
+let arrayCarSpeed = [];
 let carArray = [mercedes, bmw, toyota, lexus, audi];
 let arrayFactor = [];
-let attachmentFactor;
+let speedFactor = [];
 
 //*************Events for Cars */
 
 
 
-addMercedes.addEventListener('click', () => { mercedes.add('#idMercedes', arrayCar ); renderCar() });
-addBmw.addEventListener('click', () => { bmw.add('#idBmw', arrayCar); renderCar()});
-addToyota.addEventListener('click', () => { toyota.add( '#idToyota' , arrayCar); renderCar()});
-addAudi.addEventListener('click', () => { audi.add('#idAudi' , arrayCar); renderCar()});
-addLexus.addEventListener('click', () => { lexus.add( '#idLexus' , arrayCar); renderCar()});
+addMercedes.addEventListener('click', () => { mercedes.add('#idMercedes', arrayCar, arrayCarSpeed ); renderCar(); multiplay()});
+addBmw.addEventListener('click', () => { bmw.add('#idBmw', arrayCar, arrayCarSpeed); renderCar() ; multiplay()});
+addToyota.addEventListener('click', () => { toyota.add( '#idToyota' , arrayCar, arrayCarSpeed); renderCar(); multiplay()});
+addAudi.addEventListener('click', () => { audi.add('#idAudi' , arrayCar, arrayCarSpeed); renderCar() ; multiplay()});
+addLexus.addEventListener('click', () => { lexus.add( '#idLexus' , arrayCar, arrayCarSpeed); renderCar(); multiplay()});
 
 //**************Events for tracks */
 
@@ -131,21 +131,25 @@ function fillGround() {
 }
 
 //*****************Creat function render cars */
-
-
+let first = document.querySelector('#firstCar');
+let second = document.querySelector('#secondCar');
+let third = document.querySelector('#thirdCar');
+let firstImg;
+let secondImg;
+let thirdImg;
 
 function renderCar() {
     if (arrayCar.length === 3) {
-        let first = document.querySelector('#firstCar');
-        let firstImg = document.createElement('img');
+        
+        firstImg = document.createElement('img');
         firstImg.setAttribute('src', arrayCar[0]);
         first.appendChild(firstImg);
-        let second = document.querySelector('#secondCar');
-        let secondImg = document.createElement('img');
+        
+        secondImg = document.createElement('img');
         secondImg.setAttribute('src', arrayCar[1]);
         second.appendChild(secondImg);
-        let third = document.querySelector('#thirdCar');
-        let thirdImg = document.createElement('img');
+        
+        thirdImg = document.createElement('img');
         thirdImg.setAttribute('src', arrayCar[2]);
         third.appendChild(thirdImg);
     }
@@ -155,47 +159,44 @@ function renderCar() {
 
 //*****************Start button function */
 
-// startFunction() {
 
-// }
 
 function multiplay() {
-    if (arrayFactor.length === 1) {
-        attachmentFactor = arrayFactor[0];
-        
-    }
-
-    if (arrayCar.length === 3) {
-        carArray.forEach(function(item) {
-            console.log(item.speed)
-            console.log(attachmentFactor)
-            // let elm = item.speed
+    if (arrayFactor.length === 1 && arrayCarSpeed.length === 3) {
+        arrayCarSpeed.forEach(function(item) {
+        speedFactor.push(item * arrayFactor[0]);
         })
     }
+}
+
+function startFunction() {
+    setInterval(drive, 1000);
+}
+
+
+let firstCarSpeed = 0;
+let secondCarSpeed = 0;
+let thirdCarSpeed = 0;
+
+function drive() {
+    firstCarSpeed += speedFactor[0];
+    // firstImg.style.paddingLeft = 
+    firstImg.style.left = firstCarSpeed + 'px';
+    // console.log(firstCar.style.marginLeft)
+    console.log(firstCarSpeed)
+    secondCarSpeed += speedFactor[1];
+    secondImg.style.left = secondCarSpeed + 'px';
+    thirdCarSpeed += speedFactor[2];
+    thirdImg.style.left = thirdCarSpeed + 'px';
+}
+
+function finish() {
     
 }
 
 
-// driveCar()
 
 
 
-// let arrayCars = [mersedes, bmw, toyota, lexus, audi];
 
-
-// for (let i = 0; i < arrayCars.length; i++) {
-//     array.push(arrayCars[i].image)
-// }
-// console.log(array)
-
-// arrayCars.forEach( function(elm) { arrayCars[elm].add() } );
-
-// mersedes.add();
-// bmw.add();
-// toyota.add();
-
-// mersedes.add();
-// console.log (mersedes.array);
-
-// console.log(array);
 

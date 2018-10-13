@@ -20,10 +20,11 @@ class Cars {
         elm.appendChild(paragraf);
     }
 
-    add(idCar, array) {
+    add(idCar, array, arrSpeed) {
         let elm = document.querySelector(idCar);
         elm.style.border = 'solid 3px #ff0000'
         array.push(this.image);
+        arrSpeed.push(this.speed);
         // console.log(array)
     }
 
