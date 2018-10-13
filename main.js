@@ -84,28 +84,29 @@ let addIce = document.querySelector('#idIce');
 let addGround = document.querySelector('#idGround');
 
 
-//************Creat arrays of Cars and Tracks */
+//************Creat arrays of Global variables */
 
 let arrayCar = [];
 let elmTrack;
 let carArray = [mercedes, bmw, toyota, lexus, audi];
 let arrayFactor = [];
+let attachmentFactor;
 
 //*************Events for Cars */
 
 
 
-addMercedes.addEventListener('click', () => { mercedes.add('#idMercedes', arrayCar ); test() });
-addBmw.addEventListener('click', () => { bmw.add('#idBmw', arrayCar); test()});
-addToyota.addEventListener('click', () => { toyota.add( '#idToyota' , arrayCar); test()});
-addAudi.addEventListener('click', () => { audi.add('#idAudi' , arrayCar); test()});
-addLexus.addEventListener('click', () => { lexus.add( '#idLexus' , arrayCar); test()});
+addMercedes.addEventListener('click', () => { mercedes.add('#idMercedes', arrayCar ); renderCar() });
+addBmw.addEventListener('click', () => { bmw.add('#idBmw', arrayCar); renderCar()});
+addToyota.addEventListener('click', () => { toyota.add( '#idToyota' , arrayCar); renderCar()});
+addAudi.addEventListener('click', () => { audi.add('#idAudi' , arrayCar); renderCar()});
+addLexus.addEventListener('click', () => { lexus.add( '#idLexus' , arrayCar); renderCar()});
 
 //**************Events for tracks */
 
-addAsphalt.addEventListener('click', () => { asphalt.add('#idAsphalt', arrayFactor); fillAsphal() });
-addIce.addEventListener('click', () => { ice.add('#idIce', arrayFactor); fillIce() });
-addGround.addEventListener('click', () => { ground.add('#idGround', arrayFactor); fillGround() });
+addAsphalt.addEventListener('click', () => { asphalt.add('#idAsphalt', arrayFactor); fillAsphal(); multiplay() });
+addIce.addEventListener('click', () => { ice.add('#idIce', arrayFactor); fillIce(); multiplay() });
+addGround.addEventListener('click', () => { ground.add('#idGround', arrayFactor); fillGround(); multiplay() });
 
 
 //***************Creat functions Render track */
@@ -113,7 +114,11 @@ addGround.addEventListener('click', () => { ground.add('#idGround', arrayFactor)
 function fillAsphal() {
     let table = document.querySelector('#idTable');
     table.style.backgroundColor = '#d8d8d8';
+
 }
+
+
+
 
 function fillIce() {
     let table = document.querySelector('#idTable');
@@ -128,7 +133,8 @@ function fillGround() {
 //*****************Creat function render cars */
 
 
-function test() {
+
+function renderCar() {
     if (arrayCar.length === 3) {
         let first = document.querySelector('#firstCar');
         let firstImg = document.createElement('img');
@@ -153,15 +159,24 @@ function test() {
 
 // }
 
-function driveCar() {
-    carArray.forEach(function(item) {
-        console.log(item.speed);
-        console.log(arrayFactor)
-        console.log(this.factor);
-    })
+function multiplay() {
+    if (arrayFactor.length === 1) {
+        attachmentFactor = arrayFactor[0];
+        
+    }
+
+    if (arrayCar.length === 3) {
+        carArray.forEach(function(item) {
+            console.log(item.speed)
+            console.log(attachmentFactor)
+            // let elm = item.speed
+        })
+    }
+    
 }
 
-driveCar()
+
+// driveCar()
 
 
 

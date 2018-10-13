@@ -36,8 +36,8 @@ class Cars {
 }
 
 class Mercedes extends Cars {
-    constructor(name, speed, factor) {
-        super(name, speed, factor);
+    constructor(name, speed) {
+        super(name, speed);
         this.image = 'car1.png';
 
     }
@@ -47,29 +47,29 @@ class Mercedes extends Cars {
 
 
 class Bmw extends Cars {
-    constructor(name, speed, factor) {
-        super(name, speed, factor)
+    constructor(name, speed) {
+        super(name, speed)
         this.image = 'car2.png';
     }
 }
 
 class Toyota extends Cars {
-    constructor(name, speed, factor) {
-        super(name, speed, factor);
+    constructor(name, speed) {
+        super(name, speed);
         this.image = 'car3.png';
     }
 }
 
 class Lexus extends Cars {
-    constructor(name, speed, factor) {
-        super(name, speed, factor);
+    constructor(name, speed) {
+        super(name, speed);
         this.image = 'car4.png';
     }
 }
 
 class Audi extends Cars {
-    constructor(name, speed, factor) {
-        super(name, speed, factor);
+    constructor(name, speed) {
+        super(name, speed);
         this.image = 'car5.png';
     }
 }
