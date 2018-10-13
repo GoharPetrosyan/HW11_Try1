@@ -2,8 +2,6 @@ class Track {
     constructor(name, factor) {
         this.name = name;
         this.factor = factor;
-
-        this.add = this.add.bind(this);
     }
 
     creat(idTracks) {
@@ -19,10 +17,10 @@ class Track {
 
     }
 
-    add(idTrack, treck) {
+    add(idTrack) {
         let elm = document.querySelector(idTrack);
         elm.style.border = 'solid 3px #ff0000';
-        treck = this.color;
+        let treck = this.color;
         // console.log(treck);
     }
 }

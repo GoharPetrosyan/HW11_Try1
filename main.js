@@ -93,10 +93,6 @@ let elmTrack;
 
 
 
-
-
-
-
 addMercedes.addEventListener('click', () => { mercedes.add('#idMercedes', arrayCar ); test() });
 addBmw.addEventListener('click', () => { bmw.add('#idBmw', arrayCar); test()});
 addToyota.addEventListener('click', () => { toyota.add( '#idToyota' , arrayCar); test()});
@@ -105,9 +101,9 @@ addLexus.addEventListener('click', () => { lexus.add( '#idLexus' , arrayCar); te
 
 //**************Events for tracks */
 
-addAsphalt.addEventListener('click', () => {fillAsphal() });
-addIce.addEventListener('click', () => {fillIce() });
-addGround.addEventListener('click', () => {fillGround() });
+addAsphalt.addEventListener('click', () => { asphalt.add('#idAsphalt'); fillAsphal() });
+addIce.addEventListener('click', () => { ice.add('#idIce'); fillIce() });
+addGround.addEventListener('click', () => { ground.add('#idGround'); fillGround() });
 
 
 //***************Creat functions Render track */
@@ -127,15 +123,29 @@ function fillGround() {
     table.style.backgroundColor = '#d9d1a1';
 }
 
+//*****************Creat function render cars */
 
-// function test() {
-//     if (arrayCar.length === 3 && elmTrack !== undefined) {
-//         console.log(elmTrack)
-//         console.log(arrayCar);
-//         console.log(elmTrack);
-//         // renderCarsTrack();
-//     }
-// }
+
+function test() {
+    if (arrayCar.length === 3) {
+        let first = document.querySelector('#firstCar');
+        let firstImg = document.createElement('img');
+        firstImg.setAttribute('src', arrayCar[0]);
+        first.appendChild(firstImg);
+        let second = document.querySelector('#secondCar');
+        let secondImg = document.createElement('img');
+        secondImg.setAttribute('src', arrayCar[1]);
+        second.appendChild(secondImg);
+        let third = document.querySelector('#thirdCar');
+        let thirdImg = document.createElement('img');
+        thirdImg.setAttribute('src', arrayCar[2]);
+        third.appendChild(thirdImg);
+    }
+}
+
+
+//*****************Start button function */
+
 
 
 
