@@ -3,6 +3,8 @@ class Cars {
     constructor(name, speed) {
         this.name = name;
         this.speed = speed;
+
+        
         
     }
 
@@ -21,9 +23,7 @@ class Cars {
     add(idCar, array) {
         let elm = document.querySelector(idCar);
         elm.style.border = 'solid 3px #ff0000'
-        const img = document.createElement('img');
-        img.setAttribute('src', this.image);
-        array.push(img);
+        array.push(this.image);
         console.log(array)
     }
 

@@ -17,12 +17,12 @@ class Track {
 
     }
 
-    add(idTrack,array) {
+    add(idTrack, array) {
         let elm = document.querySelector(idTrack);
-        elm.stye.border = 'solid 3px #ff0000';
-        const img = document.createElement('img');
-        img.setAttribute('src',this.img);
-        array.push(img);
+        console.log(elm);
+        elm.style.border = 'solid 3px #ff0000';
+        array.push(this.trImage);
+        console.log(array);
     }
 }
 

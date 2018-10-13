@@ -39,44 +39,74 @@
 
 // }
 
+
+//**********Craet Cars Objects */
+
 let mercedes = new Mercedes('Mersedes', 48);
 let bmw = new Bmw ('BMW', 50);
 let toyota = new Toyota('Toyota', 47);
 let lexus = new Lexus('Lexus', 51);
 let audi = new Audi('Audi', 49);
+
+//***********Creat Tracks Objects */
+
 let asphalt = new Asphalt('Asphalt', 1.2);
 let ice = new Ice('Ice', 0.7);
 let ground = new Ground('Ground', 1);
 
+//***********Creats Cars in Manu Bar */
 
 mercedes.creat('idMercedes');
 bmw.creat('idBmw');
 toyota.creat('idToyota');
 lexus.creat('idLexus');
 audi.creat('idAudi');
+
+//**************Creats Tracks in Menu Bar */
+
 asphalt.creat('idAsphalt');
 ice.creat('idIce');
 ground.creat('idGround');
 
+
+//**************Finde Cars */
 
 let addMercedes = document.querySelector('#idMercedes');
 let addBmw = document.querySelector('#idBmw');
 let addToyota = document.querySelector('#idToyota');
 let addLexus = document.querySelector('#idLexus');
 let addAudi = document.querySelector('#idAudi');
+
+//*************** Finde Tracks */ 
+
 let addAsphalt = document.querySelector('#idAsphalt');
 let addIce = document.querySelector('#idIce');
 let addGround = document.querySelector('#idGround');
 
+
+//************Creat arrays of Cars and Tracks */
+
 let arrayCar = [];
 let arrayTrack = [];
 
-addMercedes.addEventListener('click', () => { mercedes.add('#idMercedes', arrayCar )});
+//*************Events for Cars */
+
+addMercedes.addEventListener('click', () => { mercedes.add('#idMercedes', arrayCar ) });
 addBmw.addEventListener('click', () => { bmw.add('#idBmw', arrayCar)});
 addToyota.addEventListener('click', () => { toyota.add( '#idToyota' , arrayCar)});
 addAudi.addEventListener('click', () => { audi.add('#idAudi' , arrayCar)});
 addLexus.addEventListener('click', () => { lexus.add( '#idLexus' , arrayCar)});
-addAsphalt.addEventListener('click', () => {asphalt.add()})
+
+//**************Events for tracks */
+
+addAsphalt.addEventListener('click', () => {asphalt.add('#idAsphalt', arrayTrack)});
+addIce.addEventListener('click', () => {ice.add('#idIce', arrayTrack)});
+addGround.addEventListener('click', () => {ground.add('#idGround', arrayTrack)});
+
+//***************Creat function Render Cras and track */
+
+
+
 
 
 // let arrayCars = [mersedes, bmw, toyota, lexus, audi];
