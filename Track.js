@@ -2,6 +2,8 @@ class Track {
     constructor(name, factor) {
         this.name = name;
         this.factor = factor;
+
+        this.add = this.add.bind(this);
     }
 
     creat(idTracks) {
@@ -17,12 +19,11 @@ class Track {
 
     }
 
-    add(idTrack, array) {
+    add(idTrack, treck) {
         let elm = document.querySelector(idTrack);
-        console.log(elm);
         elm.style.border = 'solid 3px #ff0000';
-        array.push(this.trImage);
-        console.log(array);
+        treck = this.color;
+        // console.log(treck);
     }
 }
 
@@ -31,6 +32,7 @@ class Asphalt extends Track {
         super(name, factor);
         this.print = 'asfalt.png';
         this.trImage = 'road1.png';
+        this.color = '#d8d8d8';
     }
 
 }
@@ -40,6 +42,7 @@ class Ice extends Track {
         super(name, factor);
         this.print = 'ice.png';
         this.trImage = 'road2.png';
+        this.color = '#c5f1f2';
     }
 }
 
@@ -48,5 +51,7 @@ class Ground extends Track {
         super(name, factor);
         this.print = 'ground.png';
         this.trImage = 'road3.png';
+        this.color = '#d9d1a1';
+
     }
 }

@@ -87,24 +87,55 @@ let addGround = document.querySelector('#idGround');
 //************Creat arrays of Cars and Tracks */
 
 let arrayCar = [];
-let arrayTrack = [];
+let elmTrack;
 
 //*************Events for Cars */
 
-addMercedes.addEventListener('click', () => { mercedes.add('#idMercedes', arrayCar ) });
-addBmw.addEventListener('click', () => { bmw.add('#idBmw', arrayCar)});
-addToyota.addEventListener('click', () => { toyota.add( '#idToyota' , arrayCar)});
-addAudi.addEventListener('click', () => { audi.add('#idAudi' , arrayCar)});
-addLexus.addEventListener('click', () => { lexus.add( '#idLexus' , arrayCar)});
+
+
+
+
+
+
+addMercedes.addEventListener('click', () => { mercedes.add('#idMercedes', arrayCar ); test() });
+addBmw.addEventListener('click', () => { bmw.add('#idBmw', arrayCar); test()});
+addToyota.addEventListener('click', () => { toyota.add( '#idToyota' , arrayCar); test()});
+addAudi.addEventListener('click', () => { audi.add('#idAudi' , arrayCar); test()});
+addLexus.addEventListener('click', () => { lexus.add( '#idLexus' , arrayCar); test()});
 
 //**************Events for tracks */
 
-addAsphalt.addEventListener('click', () => {asphalt.add('#idAsphalt', arrayTrack)});
-addIce.addEventListener('click', () => {ice.add('#idIce', arrayTrack)});
-addGround.addEventListener('click', () => {ground.add('#idGround', arrayTrack)});
+addAsphalt.addEventListener('click', () => {fillAsphal() });
+addIce.addEventListener('click', () => {fillIce() });
+addGround.addEventListener('click', () => {fillGround() });
 
-//***************Creat function Render Cras and track */
 
+//***************Creat functions Render track */
+
+function fillAsphal() {
+    let table = document.querySelector('#idTable');
+    table.style.backgroundColor = '#d8d8d8';
+}
+
+function fillIce() {
+    let table = document.querySelector('#idTable');
+    table.style.backgroundColor = '#c5f1f2';
+}
+
+function fillGround() {
+    let table = document.querySelector('#idTable');
+    table.style.backgroundColor = '#d9d1a1';
+}
+
+
+// function test() {
+//     if (arrayCar.length === 3 && elmTrack !== undefined) {
+//         console.log(elmTrack)
+//         console.log(arrayCar);
+//         console.log(elmTrack);
+//         // renderCarsTrack();
+//     }
+// }
 
 
 

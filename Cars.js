@@ -24,7 +24,7 @@ class Cars {
         let elm = document.querySelector(idCar);
         elm.style.border = 'solid 3px #ff0000'
         array.push(this.image);
-        console.log(array)
+        // console.log(array)
     }
 
     // add(classRoad) {
